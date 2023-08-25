@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="app/build/generated/data_binding_base_class_source_out/debug/out"/>
+	<classpathentry kind="src" path="app/build/generated/source/buildConfig/debug"/>
+	<classpathentry kind="src" path="nativetemplates/build/generated/source/buildConfig/debug"/>
+	<classpathentry kind="src" path="nativetemplates/src/main/java"/>
+	<classpathentry kind="lib" path="app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/compressed_assets/debug/out/assets/index.html.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/compressed_assets/debug/out/assets/js/adTest.js.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/compressed_assets/debug/out/assets/js/jquery.min.js.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/merged_java_res/debug/base.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/project_dex_archive/debug/out/87d57e0f1272e6eaf408401df7f68564d9cb1f5823d85847bf076bff88898b74_0.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/project_dex_archive/debug/out/87d57e0f1272e6eaf408401df7f68564d9cb1f5823d85847bf076bff88898b74_1.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/project_dex_archive/debug/out/87d57e0f1272e6eaf408401df7f68564d9cb1f5823d85847bf076bff88898b74_2.jar"/>
+	<classpathentry kind="lib" path="app/build/intermediates/project_dex_archive/debug/out/87d57e0f1272e6eaf408401df7f68564d9cb1f5823d85847bf076bff88898b74_3.jar"/>
+	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="nativetemplates/build/intermediates/compile_library_classes_jar/debug/classes.jar"/>
+	<classpathentry kind="lib" path="nativetemplates/build/intermediates/compile_r_class_jar/debug/R.jar"/>
+	<classpathentry kind="output" path="app/build/intermediates/javac/debug/classes"/>
+</classpath>

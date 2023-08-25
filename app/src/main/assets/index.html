@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/adTest.js"></script>
+</head>
+
+<body>
+<h1>Hello Cherry World!</h1>
+
+<button type="button" onclick="admobBannerLaunch()" class="button">Banner Launch</button>
+<button type="button" onclick="admobBannerAdSectionOpen()" class="button">Banner Open Section</button>
+<button type="button" onclick="admobBannerAdSectionClose()" class="button">Banner Close Section</button>
+<button type="button" onclick="tnkBannerLaunch()" class="button">Tnk Banner Launch</button>
+<button type="button" onclick="tnkBannerAdSectionOpen()" class="button">Tnk Banner Open Section</button>
+<button type="button" onclick="tnkBannerAdSectionClose()" class="button">Tnk Banner Close Section</button>
+<button type="button" onclick="applovinBannerLaunch()" class="button">Applovin Banner Launch</button>
+<button type="button" onclick="applovinBannerAdSectionOpen()" class="button">Applovin Banner Open Section</button>
+<button type="button" onclick="applovinBannerAdSectionClose()" class="button">Applovin Banner Close Section</button>
+<button type="button" onclick="admobInterstitialLoad()" class="button">Admob Inter Load</button>
+<button type="button" onclick="admobInterstitialShow()" class="button">Admob Inter Show</button>
+<button type="button" onclick="tnkInterstitialLoad()" class="button">Tnk Inter Load</button>
+<button type="button" onclick="tnkInterstitialShow()" class="button">Tnk Inter Show</button>
+<button type="button" onclick="applovinInterstitialLoad()" class="button">Applovin Inter Load</button>
+<button type="button" onclick="applovinInterstitialShow()" class="button">Applovin Inter Show</button>
+<button type="button" onclick="admobRewardedLoad()" class="button">Admob Reward Load</button>
+<button type="button" onclick="admobRewardedShow()" class="button">Admob Reward Show</button>
+<button type="button" onclick="tnkRewardedLoad()" class="button">Tnk Reward Load</button>
+<button type="button" onclick="tnkRewardedShow()" class="button">Tnk Reward Show</button>
+<button type="button" onclick="applovinRewardedLoad()" class="button">Applovin Reward Load</button>
+<button type="button" onclick="applovinRewardedShow()" class="button">Applovin Reward Show</button>
+<button type="button" onclick="admobNativeLoad()" class="button">Admob Native Load</button>
+<button type="button" onclick="admobNativeShow()" class="button">Admob Native Show</button>
+<button type="button" onclick="tnkNativeLoad()" class="button">Tnk Native Load</button>
+<button type="button" onclick="tnkNativeShow()" class="button">Tnk Native Show</button>
+<button type="button" onclick="applovinNativeLoad()" class="button">Applovin Native Load</button>
+<button type="button" onclick="applovinNativeShow()" class="button">Applovin Native Show</button>
+
+</body>
+<script>
+
+    AgencySeCode = {
+        ADMOB: '201',
+        TNK: '202',
+        APPLOVIN: '206'
+    }
+
+    AdvrtsTyCode = {
+        INTERSTITIAL: '01',
+        REWARDED: '02',
+        NATIVE: '03',
+        BANNER: '05'
+    }
+
+    ///////////////////////////////////////////////////////ADMOB////////////////////////////////////////////////////////////
+
+
+    // admob banner
+    function admobBannerLaunch() {
+        caasToApp.launchBannerAd(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, "ca-app-pub-3940256099942544/6300978111", { some: "data" });
+    }
+    function admobBannerAdIsDeveloped(callback) {
+        caasToApp.bannerAdIsDeveloped(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, callback);
+    }
+    function admobBannerAdSectionOpen(callback) {
+        caasToApp.bannerAdSectionOpen(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, callback);
+    }
+    function admobBannerAdSectionClose(callback) {
+        caasToApp.bannerAdSectionClose(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, callback);
+    }
+        // tnk banner
+    function tnkBannerLaunch(){
+        caasToApp.launchBannerAd(AgencySeCode.TNK, AdvrtsTyCode.BANNER, "TEST_BANNER_200", { some: "data" });
+    }
+    function tnkBannerAdIsDeveloped(callback){
+        caasToApp.bannerAdIsDeveloped(AgencySeCode.TNK, AdvrtsTyCode.BANNER, callback);
+    }
+    function tnkBannerAdSectionOpen(callback){
+        caasToApp.bannerAdSectionOpen(AgencySeCode.TNK, AdvrtsTyCode.BANNER, callback);
+    }
+    function tnkBannerAdSectionClose(callback){
+        caasToApp.bannerAdSectionClose(AgencySeCode.TNK, AdvrtsTyCode.BANNER, callback);
+    }
+        // applovin banner
+    function applovinBannerLaunch(){
+        caasToApp.launchBannerAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.BANNER, "4d4fe196a7e5b0ef", { some: "data" });
+    }
+    function applovinBannerAdIsDeveloped(callback){
+        caasToApp.bannerAdIsDeveloped(AgencySeCode.APPLOVIN, AdvrtsTyCode.BANNER, callback);
+    }
+    function applovinBannerAdSectionOpen(callback){
+        caasToApp.bannerAdSectionOpen(AgencySeCode.APPLOVIN, AdvrtsTyCode.BANNER, callback);
+    }
+    function applovinBannerAdSectionClose(callback){
+        caasToApp.bannerAdSectionClose(AgencySeCode.APPLOVIN, AdvrtsTyCode.BANNER, callback);
+    }
+
+
+
+    function bannerAdSetCallbackName() {
+        caasToApp.bannerAdSetCallbackName(callbackName, callback);
+    }
+    function bannerAdGetCallbackName() {
+        caasToApp.bannerAdGetCallbackName(callback);
+    }
+
+
+    //admob interstitial
+    function admobInterstitialLoad() {
+        caasToApp.loadFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, "ca-app-pub-3940256099942544/1033173712", { some: "data" });
+    }
+    function admobInterstitialShow() {
+        caasToApp.showFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL)
+    }
+    function admobInterstitialIsDeveloped(callback) {
+        caasToApp.fullScreenAdIsDeveloped(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+    function admobInterstitialInvalidatePreLoadedAd(callback) {
+        caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+    function admobInterstitialGetLengthPreLoadedAd(callback) {
+        caasToApp.fullScreenAdGetLengthPreLoadedAd(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+    function admobInterstitialSetMaxAdCount(callback) {
+        caasToApp.fullScreenAdSetMaxAdCount(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, count, callback)
+    }
+    function admobInterstitialGetMaxAdCount(callback) {
+        caasToApp.fullScreenAdGetMaxAdCount(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+
+    //admob rewarded
+    function admobRewardedLoad() {
+        caasToApp.loadFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, "ca-app-pub-3940256099942544/5224354917", { some: "data" });
+    }
+    function admobRewardedShow() {
+        caasToApp.showFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED);
+    }
+    function admobRewardedIsDeveloped(callback) {
+        caasToApp.fullScreenAdIsDeveloped(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, callback)
+    }
+    function admobRewardedInvalidatePreLoadedAd(callback) {
+        caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, callback)
+    }
+    function admobRewardedGetLengthPreLoadedAd(callback) {
+        caasToApp.fullScreenAdGetLengthPreLoadedAd(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, callback)
+    }
+    function admobRewardedSetMaxAdCount(callback) {
+        caasToApp.fullScreenAdSetMaxAdCount(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, count, callback)
+    }
+    function admobRewardedGetMaxAdCount(callback) {
+        caasToApp.fullScreenAdGetMaxAdCount(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, callback)
+    }
+
+    //admob native
+    function admobNativeLoad() {
+        caasToApp.loadFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, "ca-app-pub-3940256099942544/2247696110", { some: "data" });
+    }
+    function admobNativeShow() {
+        caasToApp.showFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE)
+    }
+    function admobNativeIsDeveloped(callback) {
+        caasToApp.fullScreenAdIsDeveloped(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, callback)
+    }
+    function admobNativeInvalidatePreLoadedAd(callback) {
+        caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, callback)
+    }
+    function admobNativeGetLengthPreLoadedAd(callback) {
+        caasToApp.fullScreenAdGetLengthPreLoadedAd(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, callback)
+    }
+    function admobNativeSetMaxAdCount(callback) {
+        caasToApp.fullScreenAdSetMaxAdCount(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, count, callback)
+    }
+    function admobNativeGetMaxAdCount(callback) {
+        caasToApp.fullScreenAdGetMaxAdCount(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, callback)
+    }
+
+    /////////////////////////////////////////////TNK////////////////////////////////////////////////////////////
+
+    //tnk interstitial
+    function tnkInterstitialLoad() {
+        caasToApp.loadFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, "TEST_INTERSTITIAL_V", { some: "data" });
+    }
+    function tnkInterstitialShow() {
+        caasToApp.showFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL)
+    }
+    function tnkInterstitialIsDeveloped(callback) {
+        caasToApp.fullScreenAdIsDeveloped(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+    function tnkInterstitialInvalidatePreLoadedAd(callback) {
+        caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+    function tnkInterstitialGetLengthPreLoadedAd(callback) {
+        caasToApp.fullScreenAdGetLengthPreLoadedAd(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+    function tnkInterstitialSetMaxAdCount(callback) {
+        caasToApp.fullScreenAdSetMaxAdCount(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, count, callback)
+    }
+    function tnkInterstitialGetMaxAdCount(callback) {
+        caasToApp.fullScreenAdGetMaxAdCount(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+
+    //tnk rewarded
+    function tnkRewardedLoad() {
+        caasToApp.loadFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, "TEST_REWARD_V", { some: "data" });
+    }
+    function tnkRewardedShow() {
+        caasToApp.showFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.REWARDED)
+    }
+    function tnkRewardedIsDeveloped(callback) {
+        caasToApp.fullScreenAdIsDeveloped(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, callback)
+    }
+    function tnkRewardedInvalidatePreLoadedAd(callback) {
+        caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, callback)
+    }
+    function tnkRewardedGetLengthPreLoadedAd(callback) {
+        caasToApp.fullScreenAdGetLengthPreLoadedAd(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, callback)
+    }
+    function tnkRewardedSetMaxAdCount(callback) {
+        caasToApp.fullScreenAdSetMaxAdCount(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, count, callback)
+    }
+    function tnkRewardedGetMaxAdCount(callback) {
+        caasToApp.fullScreenAdGetMaxAdCount(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, callback)
+    }
+
+    //tnk native
+    function tnkNativeLoad() {
+        caasToApp.loadFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, "TEST_NATIVE", { some: "data" });
+    }
+    function tnkNativeShow() {
+        caasToApp.showFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.NATIVE)
+    }
+    function tnkNativeIsDeveloped(callback) {
+        caasToApp.fullScreenAdIsDeveloped(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, callback)
+    }
+    function tnkNativeInvalidatePreLoadedAd(callback) {
+        caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, callback)
+    }
+    function tnkNativeGetLengthPreLoadedAd(callback) {
+        caasToApp.fullScreenAdGetLengthPreLoadedAd(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, callback)
+    }
+    function tnkNativeSetMaxAdCount(callback) {
+        caasToApp.fullScreenAdSetMaxAdCount(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, count, callback)
+    }
+    function tnkNativeGetMaxAdCount(callback) {
+        caasToApp.fullScreenAdGetMaxAdCount(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, callback)
+    }
+
+    /////////////////////////////////////////////APPLOVIN////////////////////////////////////////////////////////////
+    //applovin interstitial
+    function applovinInterstitialLoad() {
+        caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, "ea4ee6d2f8112274", { some: "data" });
+    }
+    function applovinInterstitialShow() {
+        caasToApp.showFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL)
+    }
+    function applovinInterstitialIsDeveloped(callback) {
+        caasToApp.fullScreenAdIsDeveloped(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+    function applovinInterstitialInvalidatePreLoadedAd(callback) {
+        caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+    function applovinInterstitialGetLengthPreLoadedAd(callback) {
+        caasToApp.fullScreenAdGetLengthPreLoadedAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+    function applovinInterstitialSetMaxAdCount(callback) {
+        caasToApp.fullScreenAdSetMaxAdCount(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, count, callback)
+    }
+    function applovinInterstitialGetMaxAdCount(callback) {
+        caasToApp.fullScreenAdGetMaxAdCount(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, callback)
+    }
+
+    //applovin rewarded
+    function applovinRewardedLoad() {
+        caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, "2ffb04851e4a5675", { some: "data" });
+    }
+    function applovinRewardedShow() {
+        caasToApp.showFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED)
+    }
+    function applovinRewardedIsDeveloped(callback) {
+        caasToApp.fullScreenAdIsDeveloped(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, callback)
+    }
+    function applovinRewardedInvalidatePreLoadedAd(callback) {
+        caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, callback)
+    }
+    function applovinRewardedGetLengthPreLoadedAd(callback) {
+        caasToApp.fullScreenAdGetLengthPreLoadedAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, callback)
+    }
+    function applovinRewardedSetMaxAdCount(callback) {
+        caasToApp.fullScreenAdSetMaxAdCount(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, count, callback)
+    }
+    function applovinRewardedGetMaxAdCount(callback) {
+        caasToApp.fullScreenAdGetMaxAdCount(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, callback)
+    }
+
+    //applovin native
+    function applovinNativeLoad() {
+        caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, "bd2a7043ba8546ba", { some: "data" });
+    }
+    function applovinNativeShow() {
+        caasToApp.showFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE)
+    }
+    function applovinNativeIsDeveloped(callback) {
+        caasToApp.fullScreenAdIsDeveloped(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, callback)
+    }
+    function applovinNativeInvalidatePreLoadedAd(callback) {
+        caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, callback)
+    }
+    function applovinNativeGetLengthPreLoadedAd(callback) {
+        caasToApp.fullScreenAdGetLengthPreLoadedAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, callback)
+    }
+    function applovinNativeSetMaxAdCount(callback) {
+        caasToApp.fullScreenAdSetMaxAdCount(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, count, callback)
+    }
+    function applovinNativeGetMaxAdCount(callback) {
+        caasToApp.fullScreenAdGetMaxAdCount(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, callback)
+    }
+    function fullScreenAdSetCallbackName(callback) {
+        caasToApp.fullScreenAdSetCallbackName(callbackName, callback)
+    }
+    function fullScreenAdGetCallbackName(callback) {
+        caasToApp.fullScreenAdGetCallbackName(callback)
+    }
+
+    /////////////////////////////////////////////ADMOB////////////////////////////////////////////////////////////
+
+    //admob banner
+    function admobBannerAdIsDevelopedCallback(isDeveloped) {
+        if (isDeveloped) {
+            console.log("Admob Banner is developed");
+        } else {
+            console.log("Admob Banner is not developed");
+        }
+    }
+    function admobBannerAdSectionOpenCallback(sectionOpen) {
+        console.log("Admob Banner: Section Opened");
+    }
+    function admobBannerAdSectionCloseCallback(sectionClose) {
+        console.log("Admob Banner: Section Close");
+    }
+
+        //tnk banner
+    function tnkBannerAdIsDevelopedCallback(isDeveloped) {
+        if (isDeveloped) {
+            console.log("Tnk Banner is developed");
+        } else {
+            console.log("Tnk Banner is not developed");
+        }
+    }
+    function tnkBannerAdSectionOpenCallback(sectionOpen) {
+        console.log("Tnk Banner: Section Opened");
+    }
+    function tnkBannerAdSectionCloseCallback(sectionClose) {
+        console.log("Tnk Banner: Section Close");
+    }
+
+
+    //applovin banner
+    function applovinBannerAdIsDevelopedCallback(isDeveloped) {
+        if (isDeveloped) {
+            console.log("Applovin Banner is developed");
+        } else {
+            console.log("Applovin Banner is not developed");
+        }
+    }
+    function applovinBannerAdSectionOpenCallback(sectionOpen) {
+        console.log("Applovin Banner: Section Opened");
+    }
+    function applovinBannerAdSectionCloseCallback() {
+        caasToApp.bannerAdSectionClose(sectionClose);
+        console.log("Applovin Banner: Section Close");
+    }
+
+
+    function bannerAdSetCallbackName(setCallbackName) {
+        console.log("Banner: Set callback name");
+    }
+    function bannerAdGetCallbackName(getCallbackName) {
+        console.log("Banner: Got callback name");
+    }
+
+    //admob interstitial
+    function admobInterstitialIsDevelopedCallback(isDeveloped) {
+
+        if (isDeveloped) {
+            console.log("Admob Interstitial is developed");
+        } else {
+            console.log("Admob Interstitial is not developed");
+        }
+    }
+    function admobInterstitialInvalidatePreLoadedAdCallback(invalidatePreLoadedAd) {
+        console.log("Admob Interstitial: preloaded ads invalidated");
+    }
+    function admobInterstitialGetLengthPreLoadedAdCallback(getLengthPreLoadedAd) {
+        console.log("Admob Interstitial: Got length of the preloaded ad");
+    }
+    function admobInterstitialSetMaxAdCountCallback(setMaxAdCount) {
+        console.log("Admob Interstitial: Set max ad count");
+    }
+    function admobInterstitialGetMaxAdCountCallback(getMaxAdCount) {
+        console.log("Admob Interstitial: Got max ad count");
+    }
+
+    //admob rewarded
+    function admobRewardedIsDevelopedCallback(isDeveloped) {
+        if (isDeveloped) {
+            console.log("Admob Rewarded is developed");
+        } else {
+            console.log("Admob Rewarded is not developed");
+        }
+    }
+    function admobRewardedInvalidatePreLoadedAdCallback(invalidatePreLoadedAd) {
+        console.log("Admob Rewarded: preloaded ads invalidated");
+    }
+    function admobRewardedGetLengthPreLoadedAdCallback(getLengthPreLoadedAd) {
+        console.log("Admob Rewarded: Got length of the preloaded ad");
+    }
+    function admobRewardedSetMaxAdCountCallback(setMaxAdCount) {
+        console.log("Admob Rewarded: Set max ad count");
+    }
+    function admobRewardedGetMaxAdCountCallback(getMaxAdCount) {
+        console.log("Admob Rewarded: Got max ad count");
+    }
+
+    //admob native
+    function admobNativeIsDevelopedCallback(isDeveloped) {
+        if (isDeveloped) {
+            console.log("Admob Native is developed");
+        } else {
+            console.log("Admob Native is not developed");
+        }
+    }
+    function admobNativeInvalidatePreLoadedAdCallback(invalidatePreLoadedAd) {
+        console.log("Admob Native: preloaded ads invalidated");
+    }
+    function admobNativeGetLengthPreLoadedAdCallback(getLengthPreLoadedAd) {
+        console.log("Admob Native: Got length of the preloaded ad");
+    }
+    function admobNativeSetMaxAdCountCallback(setMaxAdCount) {
+        console.log("Admob Native: Set max ad count");
+    }
+    function admobNativeGetMaxAdCountCallback(getMaxAdCount) {
+        console.log("Admob Native: Got max ad count");
+    }
+
+
+    // //tnk interstitial
+    function tnkInterstitialIsDevelopedCallback(isDeveloped) {
+
+        if (isDeveloped) {
+            console.log("Tnk Interstitial is developed");
+        } else {
+            console.log("Tnk Interstitial is not developed");
+        }
+    }
+    function tnkInterstitialInvalidatePreLoadedAdCallback(InvalidatePreLoadedAd) {
+        console.log("Tnk Interstitial: preloaded ads invalidated");
+    }
+    function tnkInterstitialGetLengthPreLoadedAdCallback(GetLengthPreLoadedAd) {
+        console.log("Tnk Interstitial: Got length of the preloaded ad");
+    }
+    function tnkInterstitialSetMaxAdCountCallback(SetMaxAdCount) {
+        console.log("Tnk Interstitial: Set max ad count");
+    }
+    function tnkInterstitialGetMaxAdCountCallback(GetMaxAdCount) {
+        console.log("Tnk Interstitial: Got max ad count");
+    }
+
+    //tnk rewarded
+    function tnkRewardedIsDevelopedCallback(isDeveloped) {
+        if (isDeveloped) {
+            console.log("Tnk Rewarded is developed");
+        } else {
+            console.log("Tnk Rewarded is not developed");
+        }
+    }
+    function tnkRewardedInvalidatePreLoadedAdCallback(InvalidatePreLoadedAd) {
+        console.log("Tnk Rewarded: preloaded ads invalidated");
+    }
+    function tnkRewardedGetLengthPreLoadedAdCallback(GetLengthPreLoadedAd) {
+        console.log("Tnk Rewarded: Got length of the preloaded ad");
+    }
+    function tnkRewardedSetMaxAdCountCallback(SetMaxAdCount) {
+        console.log("Tnk Rewarded: Set max ad count");
+    }
+    function tnkRewardedGetMaxAdCountCallback(GetMaxAdCount) {
+        console.log("Tnk Rewarded: Got max ad count");
+    }
+
+    //tnk native
+    function tnkNativeIsDevelopedCallback(isDeveloped) {
+        if (isDeveloped) {
+            console.log("Tnk Native is developed");
+        } else {
+            console.log("Tnk Native is not developed");
+        }
+    }
+    function tnkNativeInvalidatePreLoadedAdCallback(InvalidatePreLoadedAd) {
+        console.log("Tnk Native: preloaded ads invalidated");
+    }
+    function tnkNativeGetLengthPreLoadedAdCallback(GetLengthPreLoadedAd) {
+        console.log("Tnk Native: Got length of the preloaded ad");
+    }
+    function tnkNativeSetMaxAdCountCallback(SetMaxAdCount) {
+        console.log("Tnk Native: Set max ad count");
+    }
+    function tnkNativeGetMaxAdCountCallback(GetMaxAdCount) {
+        console.log("Tnk Native: Got max ad count");
+    }
+
+
+    //////////////////////////////////////////APPLOVIN////////////////////////////////////////////////////////////
+
+
+
+        //applovin interstitial
+        function applovinInterstitialIsDevelopedCallback(isDeveloped) {
+
+            if (isDeveloped) {
+                console.log("Applovin Interstitial is developed");
+            } else {
+                console.log("Applovin Interstitial is not developed");
+            }
+        }
+        function applovinInterstitialInvalidatePreLoadedAdCallback(InvalidatePreLoadedAd) {
+            console.log("Applovin Interstitial: preloaded ads invalidated");
+        }
+        function applovinInterstitialGetLengthPreLoadedAdCallback(GetLengthPreLoadedAd) {
+            console.log("Applovin Interstitial: Got length of the preloaded ad");
+        }
+        function applovinInterstitialSetMaxAdCountCallback(SetMaxAdCount) {
+            console.log("Applovin Interstitial: Set max ad count");
+        }
+        function applovinInterstitialGetMaxAdCountCallback(GetMaxAdCount) {
+            console.log("Applovin Interstitial: Got max ad count");
+        }
+
+        //applovin rewarded
+        function applovinRewardedIsDevelopedCallback(isDeveloped) {
+            if (isDeveloped) {
+                console.log("Applovin Rewarded is developed");
+            } else {
+                console.log("Applovin Rewarded is not developed");
+            }
+        }
+        function applovinRewardedInvalidatePreLoadedAdCallback(InvalidatePreLoadedAd) {
+            console.log("Applovin Rewarded: preloaded ads invalidated");
+        }
+        function applovinRewardedGetLengthPreLoadedAdCallback(GetLengthPreLoadedAd) {
+            console.log("Applovin Rewarded: Got length of the preloaded ad");
+        }
+        function applovinRewardedSetMaxAdCountCallback(SetMaxAdCount) {
+            console.log("Applovin Rewarded: Set max ad count");
+        }
+        function applovinRewardedGetMaxAdCountCallback(GetMaxAdCount) {
+            console.log("Applovin Rewarded: Got max ad count");
+        }
+
+        //applovin native
+        function applovinNativeIsDevelopedCallback(isDeveloped) {
+            if (isDeveloped) {
+                console.log("Applovin Native is developed");
+            } else {
+                console.log("Applovin Native is not developed");
+            }
+        }
+        function applovinNativeInvalidatePreLoadedAdCallback(InvalidatePreLoadedAd) {
+            console.log("Applovin Native: preloaded ads invalidated");
+        }
+        function applovinNativeGetLengthPreLoadedAdCallback(GetLengthPreLoadedAd) {
+            console.log("Applovin Native: Got length of the preloaded ad");
+        }
+        function applovinNativeSetMaxAdCountCallback(SetMaxAdCount) {
+            console.log("Applovin Native: Set max ad count");
+        }
+        function applovinNativeGetMaxAdCountCallback(GetMaxAdCount) {
+            console.log("Applovin Native: Got max ad count");
+        }
+    function fullScreenAdSetCallbackName(setCallbackName) {
+        console.log("Fullscreen: Set callback name");
+
+    }
+    function fullScreenAdGetCallbackName(getCallbackName) {
+        console.log("Fullscreen: Got callback name");
+    }
+
+</script>
+
+
+<style>
+    body {
+        text-align: center;
+    }
+
+    h1 {
+        color: lightcoral;
+    }
+
+    .button {
+        background-color: thistle;
+        font-size: 24px;
+    }
+</style>
+
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"-->
+<!--      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko" layout:decorate="~{layout/testLayout2}">-->
+
+<!--<head>-->
+<!--    <meta name="viewport" content="initial-scale=1.0">-->
+<!--    <meta charset="utf-8">-->
+
+<!--    <style>-->
+<!--		body {-->
+<!--			text-align: center;-->
+<!--		}-->
+
+<!--		h1 {-->
+<!--			color: lightcoral;-->
+<!--		}-->
+
+<!--		.button {-->
+<!--			background-color: pink;-->
+<!--			font-size: 24px;-->
+<!--		}-->
+<!--	</style>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<th:block layout:fragment="content">-->
+<!--    <div class="wrap" style="padding-bottom:60px">-->
+<!--        <h1>Hello Cherry World!</h1>-->
+<!--    </div>-->
+<!--    <div class="b admob">-->
+<!--        <button type="button" onclick="admobBannerLaunch()" class="button">Admob Banner Launch</button>-->
+<!--        <button type="button" onclick="admobBannerRemove()" class="button">Admob Banner Remove</button>-->
+<!--        <button type="button" onclick="admobBannerAdSectionOpen()" class="button">Admob Banner Open</button>-->
+<!--        <button type="button" onclick="admobBannerAdSectionClose()" class="button">Admob Banner Close</button>-->
+<!--        <button type="button" onclick="admobBannerAdIsDeveloped()" class="button">Admob Banner isDeveloped</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="b tnk">-->
+<!--        <button type="button" onclick="tnkBannerLaunch()" class="button">Tnk Banner Launch</button>-->
+<!--        <button type="button" onclick="tnkBannerRemove()" class="button">Tnk Banner Remove</button>-->
+<!--        <button type="button" onclick="tnkBannerAdSectionOpen()" class="button">Tnk Banner Open</button>-->
+<!--        <button type="button" onclick="tnkBannerAdSectionClose()" class="button">Tnk Banner Close</button>-->
+<!--        <button type="button" onclick="tnkBannerAdIsDeveloped()" class="button">Tnk Banner isDeveloped</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="b applovin">-->
+<!--        <button type="button" onclick="applovinBannerLaunch()" class="button">Applovin Banner Launch</button>-->
+<!--        <button type="button" onclick="applovinBannerRemove()" class="button">Applovin Banner Remove</button>-->
+<!--        <button type="button" onclick="applovinBannerAdSectionOpen()" class="button">Applovin Banner Open</button>-->
+<!--        <button type="button" onclick="applovinBannerAdSectionClose()" class="button">Applovin Banner Close</button>-->
+<!--        <button type="button" onclick="applovinBannerAdIsDeveloped()" class="button">Applovin Banner-->
+<!--            isDeveloped</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+<!--    <br />-->
+<!--    <br />-->
+<!--    <br />-->
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="i admob">-->
+<!--        <button type="button" onclick="admobInterstitialLoad()" class="button">Admob Inter Load</button>-->
+<!--        <button type="button" onclick="admobInterstitialShow()" class="button">Admob Inter Show</button>-->
+<!--        <button type="button" onclick="admobInterstitialIsDeveloped()" class="button">Admob Inter-->
+<!--            isDeveloped</button>-->
+<!--        <button type="button" onclick="admobInterstitialIsReady()" class="button">Admob Inter isReady</button>-->
+<!--        <button type="button" onclick="admobInterstitialInvalidatePreLoadedAd()" class="button">Admob Inter-->
+<!--            Invalidate</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="isready">isready</div>-->
+<!--        <div class="invalidate">invalidate</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="r admob">-->
+<!--        <button type="button" onclick="admobRewardedLoad()" class="button">Admob Reward Load</button>-->
+<!--        <button type="button" onclick="admobRewardedShow()" class="button">Admob Reward Show</button>-->
+<!--        <button type="button" onclick="admobRewardedIsDeveloped()" class="button">Admob Reward isDeveloped</button>-->
+<!--        <button type="button" onclick="admobRewardedIsReady()" class="button">Admob Reward isReady</button>-->
+<!--        <button type="button" onclick="admobRewardedInvalidatePreLoadedAd()" class="button">Admob Reward-->
+<!--            Invalidate</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="isready">isready</div>-->
+<!--        <div class="invalidate">invalidate</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="n admob">-->
+<!--        <button type="button" onclick="admobNativeLoad()" class="button">Admob Native Load</button>-->
+<!--        <button type="button" onclick="admobNativeShow()" class="button">Admob Native Show</button>-->
+<!--        <button type="button" onclick="admobNativeIsDeveloped()" class="button">Admob Native isDeveloped</button>-->
+<!--        <button type="button" onclick="admobNativeIsReady()" class="button">Admob Native isReady</button>-->
+<!--        <button type="button" onclick="admobNativeInvalidatePreLoadedAd()" class="button">Admob Native-->
+<!--            Invalidate</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="isready">isready</div>-->
+<!--        <div class="invalidate">invalidate</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+<!--    <br />-->
+<!--    <br />-->
+<!--    <br />-->
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="i tnk">-->
+<!--        <button type="button" onclick="tnkInterstitialLoad()" class="button">Tnk Inter Load</button>-->
+<!--        <button type="button" onclick="tnkInterstitialShow()" class="button">Tnk Inter Show</button>-->
+<!--        <button type="button" onclick="tnkInterstitialIsDeveloped()" class="button">Tnk Inter isDeveloped</button>-->
+<!--        <button type="button" onclick="tnkInterstitialIsReady()" class="button">Tnk Inter isReady</button>-->
+<!--        <button type="button" onclick="tnkInterstitialInvalidatePreLoadedAd()" class="button">Tnk Inter-->
+<!--            Invalidate</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="isready">isready</div>-->
+<!--        <div class="invalidate">invalidate</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="r tnk">-->
+<!--        <button type="button" onclick="tnkRewardedLoad()" class="button">Tnk Reward Load</button>-->
+<!--        <button type="button" onclick="tnkRewardedShow()" class="button">Tnk Reward Show</button>-->
+<!--        <button type="button" onclick="tnkRewardedIsDeveloped()" class="button">Tnk Reward isDeveloped</button>-->
+<!--        <button type="button" onclick="tnkRewardedIsReady()" class="button">Tnk Reward isReady</button>-->
+<!--        <button type="button" onclick="tnkRewardedInvalidatePreLoadedAd()" class="button">Tnk Reward-->
+<!--            Invalidate</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="isready">isready</div>-->
+<!--        <div class="invalidate">invalidate</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="n tnk">-->
+<!--        <button type="button" onclick="tnkNativeLoad()" class="button">Tnk Native Load</button>-->
+<!--        <button type="button" onclick="tnkNativeShow()" class="button">Tnk Native Show</button>-->
+<!--        <button type="button" onclick="tnkNativeIsDeveloped()" class="button">Tnk Native isDeveloped</button>-->
+<!--        <button type="button" onclick="tnkNativeIsReady()" class="button">Tnk Native isReady</button>-->
+<!--        <button type="button" onclick="tnkNativeInvalidatePreLoadedAd()" class="button">Tnk Native-->
+<!--            Invalidate</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="isready">isready</div>-->
+<!--        <div class="invalidate">invalidate</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+<!--    <br />-->
+<!--    <br />-->
+<!--    <br />-->
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="i applovin">-->
+<!--        <button type="button" onclick="applovinInterstitialLoad()" class="button">Applovin Inter Load</button>-->
+<!--        <button type="button" onclick="applovinInterstitialShow()" class="button">Applovin Inter Show</button>-->
+<!--        <button type="button" onclick="applovinInterstitialIsDeveloped()" class="button">Applovin Inter-->
+<!--            isDeveloped</button>-->
+<!--        <button type="button" onclick="applovinInterstitialIsReady()" class="button">Applovin Inter isReady</button>-->
+<!--        <button type="button" onclick="applovinInterstitialInvalidatePreLoadedAd()" class="button">Applovin Inter-->
+<!--            Invalidate</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="isready">isready</div>-->
+<!--        <div class="invalidate">invalidate</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="r applovin">-->
+<!--        <button type="button" onclick="applovinRewardedLoad()" class="button">Applovin Reward Load</button>-->
+<!--        <button type="button" onclick="applovinRewardedShow()" class="button">Applovin Reward Show</button>-->
+<!--        <button type="button" onclick="applovinRewardedIsDeveloped()" class="button">Applovin Reward-->
+<!--            isDeveloped</button>-->
+<!--        <button type="button" onclick="applovinRewardedIsReady()" class="button">Applovin Reward isReady</button>-->
+<!--        <button type="button" onclick="applovinRewardedInvalidatePreLoadedAd()" class="button">Applovin Reward-->
+<!--            Invalidate</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="isready">isready</div>-->
+<!--        <div class="invalidate">invalidate</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+
+<!--    <br />-->
+<!--    <br />-->
+
+<!--    <div class="n applovin">-->
+<!--        <button type="button" onclick="applovinNativeLoad()" class="button">Applovin Native Load</button>-->
+<!--        <button type="button" onclick="applovinNativeShow()" class="button">Applovin Native Show</button>-->
+<!--        <button type="button" onclick="applovinNativeIsDeveloped()" class="button">Applovin Native-->
+<!--            isDeveloped</button>-->
+<!--        <button type="button" onclick="applovinNativeIsReady()" class="button">Applovin Native isReady</button>-->
+<!--        <button type="button" onclick="applovinNativeInvalidatePreLoadedAd()" class="button">Applovin Native-->
+<!--            Invalidate</button>-->
+<!--        <div class="isdev">isdev</div>-->
+<!--        <div class="isready">isready</div>-->
+<!--        <div class="invalidate">invalidate</div>-->
+<!--        <div class="callback">callback</div>-->
+<!--    </div>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <script>-->
+<!--			$(function () {-->
+<!--				//fullscreenad-->
+<!--				$(window).on('fullScreenAd_onLoadSuccess', function (e, data) {-->
+<!--					//js 구조분해할당문법 ES6-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, jsonStr] = data-->
+<!--					console.log('fullScreenAd_onLoadSuccess, data = ', agencySeCode, advrtsTyCode, adKey, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`fullScreenAd_onLoadSuccess, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('fullScreenAd_onLoadFail', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr] = data-->
+<!--					console.log('fullScreenAd_onLoadFail, data = ', agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`fullScreenAd_onLoadFail, data =  ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${errMsg}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('fullScreenAd_onOpen', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, jsonStr] = data-->
+<!--					console.log('fullScreenAd_onOpen, data = ', agencySeCode, advrtsTyCode, adKey, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`fullScreenAd_onOpen, data =  ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('fullScreenAd_onClose', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, jsonStr] = data-->
+<!--					console.log('fullScreenAd_onClose, data = ', agencySeCode, advrtsTyCode, adKey, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`fullScreenAd_onClose, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('fullScreenAd_onClick', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, jsonStr] = data-->
+<!--					console.log('fullScreenAd_onClick, data = ', agencySeCode, advrtsTyCode, adKey, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`fullScreenAd_onClick, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('fullScreenAd_onImpression', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, jsonStr] = data-->
+<!--					console.log('fullScreenAd_onImpression, data = ', agencySeCode, advrtsTyCode, adKey, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`fullScreenAd_onImpression, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('fullScreenAd_onRewardComplete', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, amount, jsonStr] = data-->
+<!--					console.log('fullScreenAd_onRewardComplete, data = ', agencySeCode, advrtsTyCode, adKey, amount, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`fullScreenAd_onRewardComplete, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('fullScreenAd_onException', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr] = data-->
+<!--					console.log('fullScreenAd_onException, data = ', agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`fullScreenAd_onException, data =  ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${errMsg}, ${jsonStr}`)-->
+<!--				})-->
+
+
+
+
+<!--				//banner-->
+<!--				$(window).on('bannerAd_onLoadSuccess', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, jsonStr] = data-->
+<!--					console.log('bannerAd_onLoadSuccess, data = ', agencySeCode, advrtsTyCode, adKey, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`bannerAd_onLoadSuccess, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('bannerAd_onLoadFail', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr] = data-->
+<!--					console.log('bannerAd_onLoadFail, data = ', agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`bannerAd_onLoadFail, data =  ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${errMsg}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('bannerAd_onOpen', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, jsonStr] = data-->
+<!--					console.log('bannerAd_onOpen, data = ', agencySeCode, advrtsTyCode, adKey, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`bannerAd_onOpen, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('bannerAd_onClose', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, jsonStr] = data-->
+<!--					console.log('bannerAd_onClose, data = ', agencySeCode, advrtsTyCode, adKey, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`bannerAd_onClose, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('bannerAd_onClick', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, jsonStr] = data-->
+<!--					console.log('bannerAd_onClick, data = ', agencySeCode, advrtsTyCode, adKey, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`bannerAd_onClick, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('bannerAd_onImpression', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, jsonStr] = data-->
+<!--					console.log('bannerAd_onImpression, data = ', agencySeCode, advrtsTyCode, adKey, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`bannerAd_onImpression, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('bannerAd_onRewardComplete', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, amount, jsonStr] = data-->
+<!--					console.log('bannerAd_onLoadSuccess, data = ', agencySeCode, advrtsTyCode, adKey, amount, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`bannerAd_onLoadSuccess, data = ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${jsonStr}`)-->
+<!--				})-->
+<!--				$(window).on('bannerAd_onException', function (e, data) {-->
+<!--					const [agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr] = data-->
+<!--					console.log('bannerAd_onException, data = ', agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr)-->
+<!--					$(getCssSelector(agencySeCode, advrtsTyCode) + " .callback").text(`bannerAd_onException, data =  ${agencySeCode}, ${advrtsTyCode}, ${adKey}, ${errMsg}, ${jsonStr}`)-->
+<!--				})-->
+<!--			})-->
+<!--		</script>-->
+
+<!--    <script>-->
+
+<!--			AgencySeCode = {-->
+<!--				ADMOB: '201',-->
+<!--				TNK: '202',-->
+<!--				APPLOVIN: '206'-->
+<!--			}-->
+
+<!--			AdvrtsTyCode = {-->
+<!--				INTERSTITIAL: '01',-->
+<!--				REWARDED: '02',-->
+<!--				NATIVE: '03',-->
+<!--				BANNER: '05'-->
+<!--			}-->
+
+<!--			function getCssSelector(agencySeCode, advrtsTyCode) {-->
+<!--				let sel1 = ""-->
+<!--				let sel2 = ""-->
+<!--				if (agencySeCode === AgencySeCode.ADMOB) {-->
+<!--					sel1 = "admob"-->
+<!--				} else if (agencySeCode === AgencySeCode.TNK) {-->
+<!--					sel1 = "tnk"-->
+<!--				} else {-->
+<!--					//must applovin-->
+<!--					sel1 = "applovin"-->
+<!--				}-->
+
+<!--				if (advrtsTyCode === AdvrtsTyCode.INTERSTITIAL) {-->
+<!--					sel2 = "i"-->
+<!--				} else if (advrtsTyCode === AdvrtsTyCode.REWARDED) {-->
+<!--					sel2 = "r"-->
+<!--				} else if (advrtsTyCode === AdvrtsTyCode.NATIVE) {-->
+<!--					sel2 = "n"-->
+<!--				} else {-->
+<!--					//must banner-->
+<!--					sel2 = "b"-->
+<!--				}-->
+
+<!--				return `.${sel2}.${sel1}`-->
+<!--			}-->
+
+<!--			///////////////////////////////////////////////////////BANNERS////////////////////////////////////////////////////////////-->
+
+
+<!--			// admob banner-->
+<!--			function admobBannerLaunch() {-->
+<!--				caasToApp.launchBannerAd(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, "ca-app-pub-3940256099942544/6300978111", {some: "data"});-->
+<!--			}-->
+<!--			function admobBannerRemove(callback) {-->
+<!--				caasToApp.removeBannerAd(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, _$$_(data => {-->
+<!--					console.log('admob banner is removed')-->
+<!--				}))-->
+<!--			}-->
+<!--			function admobBannerAdIsDeveloped(callback) {-->
+<!--				caasToApp.bannerAdIsDeveloped(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, _$$_((agency, advert, isDeveloped) => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.b.admob .isdev').text(`admob banner is developed`)-->
+<!--						console.log("admob banner is developed");-->
+<!--					} else {-->
+<!--						$('.b.admob .isdev').text(`admob banner is Not developed`)-->
+<!--						console.log("admob banner is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function admobBannerAdSectionOpen(callback) {-->
+<!--				caasToApp.bannerAdSectionOpen(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, _$$_(data => {-->
+<!--					console.log('section open')-->
+<!--				}))-->
+<!--			}-->
+<!--			function admobBannerAdSectionClose(callback) {-->
+<!--				caasToApp.bannerAdSectionClose(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, _$$_(data => {-->
+<!--					console.log('section closed')-->
+<!--				}))-->
+<!--			}-->
+<!--			// tnk banner-->
+<!--			function tnkBannerLaunch() {-->
+<!--				caasToApp.launchBannerAd(AgencySeCode.TNK, AdvrtsTyCode.BANNER, "TEST_BANNER_200", {some: "data"});-->
+<!--			}-->
+<!--				function tnkBannerRemove(callback) {-->
+<!--				caasToApp.removeBannerAd(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, _$$_(data => {-->
+<!--					console.log('tnk banner is removed')-->
+<!--				}))-->
+<!--			}-->
+<!--			function tnkBannerAdIsDeveloped(callback) {-->
+<!--				caasToApp.bannerAdIsDeveloped(AgencySeCode.TNK, AdvrtsTyCode.BANNER, _$$_((agency, advert, isDeveloped) => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.b.tnk .isdev').text(`tnk banner is developed`)-->
+<!--						console.log("tnk banner is developed");-->
+<!--					} else {-->
+<!--						$('.b.tnk .isdev').text(`tnk banner is Not developed`)-->
+<!--						console.log("tnk banner is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function tnkBannerAdSectionOpen(callback) {-->
+<!--				caasToApp.bannerAdSectionOpen(AgencySeCode.TNK, AdvrtsTyCode.BANNER, _$$_(data => {-->
+<!--					console.log('section open')-->
+<!--				}))-->
+<!--			}-->
+
+<!--			function tnkBannerAdSectionClose(callback) {-->
+<!--				caasToApp.bannerAdSectionClose(AgencySeCode.TNK, AdvrtsTyCode.BANNER, _$$_(data => {-->
+<!--					console.log('section closed')-->
+<!--				}))-->
+<!--			}-->
+<!--			// applovin banner-->
+<!--			function applovinBannerLaunch() {-->
+<!--				//world-->
+<!--				//caasToApp.launchBannerAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.BANNER, "738060c4ec9eda94", {some: "data"});-->
+
+<!--				//charity-->
+<!--				caasToApp.launchBannerAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.BANNER, "47dc0aa7709359ea", {some: "data"});-->
+<!--			}-->
+<!--				function applovinBannerRemove(callback) {-->
+<!--				caasToApp.removeBannerAd(AgencySeCode.ADMOB, AdvrtsTyCode.BANNER, _$$_(data => {-->
+<!--					console.log('applovin banner is removed')-->
+<!--				}))-->
+<!--			}-->
+<!--			function applovinBannerAdIsDeveloped(callback) {-->
+<!--				caasToApp.bannerAdIsDeveloped(AgencySeCode.APPLOVIN, AdvrtsTyCode.BANNER, _$$_((agency, advert, isDeveloped) => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.b.applovin .isdev').text(`applovin banner is developed`)-->
+<!--						console.log("applovin banner is developed");-->
+<!--					} else {-->
+<!--						$('.b.applovin .isdev').text(`applovin banner is Not developed`)-->
+<!--						console.log("applovin banner is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function applovinBannerAdSectionOpen(callback) {-->
+<!--				caasToApp.bannerAdSectionOpen(AgencySeCode.APPLOVIN, AdvrtsTyCode.BANNER, _$$_(data => {-->
+<!--					console.log('section open')-->
+<!--				}))-->
+<!--			}-->
+<!--			function applovinBannerAdSectionClose(callback) {-->
+<!--				caasToApp.bannerAdSectionClose(AgencySeCode.APPLOVIN, AdvrtsTyCode.BANNER, _$$_(data => {-->
+<!--					console.log('section closed')-->
+<!--				}))-->
+<!--			}-->
+
+
+
+<!--			function bannerAdSetCallbackName(callback) {-->
+<!--				$('.b.admob .callback').text(`${callbackName}`)-->
+<!--				caasToApp.bannerAdSetCallbackName(callbackName, callback);-->
+<!--			}-->
+<!--			function bannerAdGetCallbackName(callback) {-->
+<!--				caasToApp.bannerAdGetCallbackName(callback);-->
+<!--			}-->
+
+
+<!--			///////////////////////////////////////////////////////ADMOB////////////////////////////////////////////////////////////-->
+
+<!--			//admob interstitial-->
+<!--			function admobInterstitialLoad() {-->
+<!--				caasToApp.loadFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, "ca-app-pub-3940256099942544/1033173712", {some: "data"});-->
+<!--			}-->
+<!--			function admobInterstitialShow() {-->
+<!--				caasToApp.showFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, {some: "data"});-->
+<!--			}-->
+<!--			function admobInterstitialIsDeveloped() {-->
+<!--				caasToApp.fullScreenAdIsDeveloped(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, _$$_((agency, advert, isDeveloped) => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.i.admob .isdev').text(`admob interstitial is developed`)-->
+<!--						console.log("admob interstitial is developed");-->
+<!--					} else {-->
+<!--						$('.i.admob .isdev').text(`admob interstitial is Not developed`)-->
+<!--						console.log("admob interstitial is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function admobInterstitialInvalidatePreLoadedAd(callback) {-->
+<!--				caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, _$$_((agency, advert) => {-->
+<!--					$('.i.admob .invalidate').text(`admob interstitial has been invalidated`)-->
+<!--					console.log('fullScreenAdInvalidatePreLoadedAd')-->
+<!--				}))-->
+<!--			}-->
+<!--			function admobInterstitialIsReady(callback) {-->
+<!--				caasToApp.fullScreenAdIsReady(AgencySeCode.ADMOB, AdvrtsTyCode.INTERSTITIAL, _$$_((agency, advert, isReady) => {-->
+<!--					if (isReady) {-->
+<!--						$('.i.admob .isready').text(`admob interstitial is ready`)-->
+<!--						console.log("admob interstitial is ready");-->
+<!--					} else {-->
+<!--						$('.i.admob .isready').text(`admob interstitial is Not ready`)-->
+<!--						console.log("admob interstitial is not ready");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+
+<!--			//admob rewarded-->
+<!--			function admobRewardedLoad() {-->
+<!--				caasToApp.loadFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, "ca-app-pub-3940256099942544/5224354917", {some: "data"});-->
+<!--			}-->
+<!--			function admobRewardedShow() {-->
+<!--				caasToApp.showFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, {some: "data"});-->
+<!--			}-->
+<!--			function admobRewardedIsDeveloped() {-->
+<!--				caasToApp.fullScreenAdIsDeveloped(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, _$$_((agency, advert, isDeveloped) => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.r.admob .isdev').text(`admob rewarded is developed`)-->
+<!--						console.log("admob rewarded is developed");-->
+<!--					} else {-->
+<!--						$('.r.admob .isdev').text(`admob rewarded is Not developed`)-->
+<!--						console.log("admob rewarded is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function admobRewardedInvalidatePreLoadedAd(callback) {-->
+<!--				caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, _$$_((agency, advert) => {-->
+<!--					$('.r.admob .invalidate').text(`admob rewarded has been invalidated`)-->
+<!--					console.log('fullScreenAdInvalidatePreLoadedAd')-->
+<!--				}))-->
+<!--			}-->
+<!--			function admobRewardedIsReady(callback) {-->
+<!--				caasToApp.fullScreenAdIsReady(AgencySeCode.ADMOB, AdvrtsTyCode.REWARDED, _$$_((agency, advert, isReady) => {-->
+<!--					if (isReady) {-->
+<!--						$('.r.admob .isready').text(`admob rewarded is ready`)-->
+<!--						console.log("admob rewarded is ready");-->
+<!--					} else {-->
+<!--						$('.r.admob .isready').text(`admob rewarded is Not ready`)-->
+<!--						console.log("admob rewarded is not ready");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+
+<!--			//admob native-->
+<!--			function admobNativeLoad() {-->
+<!--				caasToApp.loadFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, "ca-app-pub-3940256099942544/2247696110", {some: "data"});-->
+<!--			}-->
+<!--			function admobNativeShow() {-->
+<!--				caasToApp.showFullScreenAd(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, {some: "data"});-->
+<!--			}-->
+<!--			function admobNativeIsDeveloped() {-->
+<!--				caasToApp.fullScreenAdIsDeveloped(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, _$$_((agency, advert, isDeveloped)  => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.n.admob .isdev').text(`admob native is developed`)-->
+<!--						console.log("admob native is developed");-->
+<!--					} else {-->
+<!--						$('.n.admob .isdev').text(`admob native is Not developed`)-->
+<!--						console.log("admob native is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function admobNativeInvalidatePreLoadedAd(callback) {-->
+<!--				caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, _$$_((agency, advert)  => {-->
+<!--					$('.n.admob .invalidate').text(`admob native has been invalidated`)-->
+<!--					console.log('fullScreenAdInvalidatePreLoadedAd')-->
+<!--				}))-->
+<!--			}-->
+<!--			function admobNativeIsReady(callback) {-->
+<!--				caasToApp.fullScreenAdIsReady(AgencySeCode.ADMOB, AdvrtsTyCode.NATIVE, _$$_((agency, advert, isReady)  => {-->
+<!--					if (isReady) {-->
+<!--						$('.n.admob .isready').text(`admob native is ready`)-->
+<!--						console.log("admob native is ready");-->
+<!--					} else {-->
+<!--						$('.n.admob .isready').text(`admob native is Not ready`)-->
+<!--						console.log("admob native is not ready");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+
+<!--			/////////////////////////////////////////////TNK////////////////////////////////////////////////////////////-->
+
+<!--			//tnk interstitial-->
+<!--			function tnkInterstitialLoad() {-->
+<!--				caasToApp.loadFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, "TEST_INTERSTITIAL_V", {some: "data"});-->
+<!--			}-->
+<!--			function tnkInterstitialShow() {-->
+<!--				caasToApp.showFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, {some: "data"});-->
+<!--			}-->
+<!--			function tnkInterstitialIsDeveloped() {-->
+<!--				caasToApp.fullScreenAdIsDeveloped(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, _$$_((agency, advert, isDeveloped)  => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.i.tnk .isdev').text(`tnk interstitial is developed`)-->
+<!--						console.log("tnk interstitial is developed");-->
+<!--					} else {-->
+<!--						$('.i.tnk .isdev').text(`tnk interstitial is Not developed`)-->
+<!--						console.log("tnk interstitial is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function tnkInterstitialInvalidatePreLoadedAd(callback) {-->
+<!--				caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, _$$_((agency, advert)  => {-->
+<!--					$('.i.tnk .invalidate').text(`tnk interstitial has been invalidated`)-->
+<!--					console.log('fullScreenAdInvalidatePreLoadedAd')-->
+<!--				}))-->
+<!--			}-->
+<!--			function tnkInterstitialIsReady(callback) {-->
+<!--				caasToApp.fullScreenAdIsReady(AgencySeCode.TNK, AdvrtsTyCode.INTERSTITIAL, _$$_((agency, advert, isReady)  => {-->
+<!--					if (isReady) {-->
+<!--						$('.i.tnk .isready').text(`tnk interstitial is ready`)-->
+<!--						console.log("tnk interstitial is ready");-->
+<!--					} else {-->
+<!--						$('.i.tnk .isready').text(`tnk interstitial is Not ready`)-->
+<!--						console.log("tnk interstitial is not ready");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+
+<!--			//tnk rewarded-->
+<!--			function tnkRewardedLoad() {-->
+<!--				caasToApp.loadFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, "TEST_REWARD_V", {some: "data"});-->
+<!--			}-->
+<!--			function tnkRewardedShow() {-->
+<!--				caasToApp.showFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, {some: "data"});-->
+<!--			}-->
+<!--			function tnkRewardedIsDeveloped() {-->
+<!--				caasToApp.fullScreenAdIsDeveloped(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, _$$_((agency, advert, isDeveloped)  => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.r.tnk .isdev').text(`tnk rewarded is developed`)-->
+<!--						console.log("tnk rewarded is developed");-->
+<!--					} else {-->
+<!--						$('.r.admob .isdev').text(`tnk rewarded is Not developed`)-->
+<!--						console.log("tnk rewarded is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function tnkRewardedInvalidatePreLoadedAd(callback) {-->
+<!--				$('.r.tnk .invalidate').text(`tnk rewarded has been invalidated`)-->
+<!--				caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, _$$_((agency, advert)  => {-->
+<!--					console.log('fullScreenAdInvalidatePreLoadedAd')-->
+<!--				}))-->
+<!--			}-->
+<!--			function tnkRewardedIsReady(callback) {-->
+<!--				caasToApp.fullScreenAdIsReady(AgencySeCode.TNK, AdvrtsTyCode.REWARDED, _$$_((agency, advert, isReady)  => {-->
+<!--					if (isReady) {-->
+<!--						$('.r.tnk .isready').text(`tnk rewarded is ready`)-->
+<!--						console.log("tnk rewarded is ready");-->
+<!--					} else {-->
+<!--						$('.r.tnk .isready').text(`tnk rewarded is Not ready`)-->
+<!--						console.log("tnk rewarded is not ready");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+
+<!--			//tnk native-->
+<!--			function tnkNativeLoad() {-->
+<!--				caasToApp.loadFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, "TEST_NATIVE", {some: "data"});-->
+<!--			}-->
+<!--			function tnkNativeShow() {-->
+<!--				caasToApp.showFullScreenAd(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, {some: "data"});-->
+<!--			}-->
+<!--			function tnkNativeIsDeveloped() {-->
+<!--				caasToApp.fullScreenAdIsDeveloped(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, _$$_((agency, advert, isDeveloped)  => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.n.tnk .isdev').text(`tnk native is developed`)-->
+<!--						console.log("tnk native is developed");-->
+<!--					} else {-->
+<!--						$('.n.tnk .isdev').text(`tnk native is Not developed`)-->
+<!--						console.log("tnk native is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function tnkNativeInvalidatePreLoadedAd(callback) {-->
+<!--				caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, _$$_((agency, advert)  => {-->
+<!--					$('.n.tnk .invalidate').text(`tnk native has been invalidated`)-->
+<!--					console.log('fullScreenAdInvalidatePreLoadedAd')-->
+<!--				}))-->
+<!--			}-->
+<!--			function tnkNativeIsReady(callback) {-->
+<!--				caasToApp.fullScreenAdIsReady(AgencySeCode.TNK, AdvrtsTyCode.NATIVE, _$$_((agency, advert, isReady)  => {-->
+<!--					if (isReady) {-->
+<!--						$('.n.tnk .isready').text(`tnk native is ready`)-->
+<!--						console.log("tnk native is ready");-->
+<!--					} else {-->
+<!--						$('.n.tnk .isready').text(`tnk native is Not ready`)-->
+<!--						console.log("tnk native is not ready");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+
+
+<!--			/////////////////////////////////////////////APPLOVIN////////////////////////////////////////////////////////////-->
+<!--			//applovin interstitial-->
+<!--			function applovinInterstitialLoad() {-->
+<!--				//test-->
+<!--				//caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, "ea4ee6d2f8112274", {some: "data"});-->
+
+<!--				//world-->
+<!--				//caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, "38620dda7b45e996", {some: "data"});-->
+
+<!--				//charity-->
+<!--				caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, "4ad2198f3e73a186", {some: "data"});-->
+<!--			}-->
+<!--			function applovinInterstitialShow() {-->
+<!--				caasToApp.showFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, {some: "data"});-->
+<!--			}-->
+<!--			function applovinInterstitialIsDeveloped() {-->
+<!--				caasToApp.fullScreenAdIsDeveloped(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, _$$_((agency, advert, isDeveloped)  => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.i.applovin .isdev').text(`applovin interstitial is developed`)-->
+<!--						console.log("applovin interstitial is developed");-->
+<!--					} else {-->
+<!--						$('.i.applovin .isdev').text(`applovin interstitial is Not developed`)-->
+<!--						console.log("applovin interstitial is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function applovinInterstitialInvalidatePreLoadedAd(callback) {-->
+<!--				caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, _$$_((agency, advert)  => {-->
+<!--					$('.i.applovin .invalidate').text(`applovin interstitial has been invalidated`)-->
+<!--					console.log('fullScreenAdInvalidatePreLoadedAd')-->
+<!--				}))-->
+<!--			}-->
+<!--			function applovinInterstitialIsReady(callback) {-->
+<!--				caasToApp.fullScreenAdIsReady(AgencySeCode.APPLOVIN, AdvrtsTyCode.INTERSTITIAL, _$$_((agency, advert, isReady)  => {-->
+<!--					if (isReady) {-->
+<!--						$('.i.applovin .isready').text(`applovin interstitial is ready`)-->
+<!--						console.log("applovin interstitial is ready");-->
+<!--					} else {-->
+<!--						$('.i.applovin .isready').text(`applovin interstitial is Not ready`)-->
+<!--						console.log("applovin interstitial is not ready");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+
+<!--			//applovin rewarded-->
+<!--			function applovinRewardedLoad() {-->
+<!--				//test-->
+<!--				//caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, "2ffb04851e4a5675", {some: "data"});-->
+
+<!--				//world-->
+<!--				//caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, "e30b1eb50a46dc42", {some: "data"});-->
+
+<!--				//charity-->
+<!--				caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, "cf1526e95ac3bb41", {some: "data"});-->
+<!--			}-->
+<!--			function applovinRewardedShow() {-->
+<!--				caasToApp.showFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, {some: "data"});-->
+<!--			}-->
+<!--			function applovinRewardedIsDeveloped() {-->
+<!--				caasToApp.fullScreenAdIsDeveloped(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, _$$_((agency, advert, isDeveloped)  => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.r.applovin .isdev').text(`applovin rewarded is developed`)-->
+<!--						console.log("applovin rewarded is developed");-->
+<!--					} else {-->
+<!--						$('.r.applovin .isdev').text(`applovin rewarded is Not developed`)-->
+<!--						console.log("applovin rewarded is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function applovinRewardedInvalidatePreLoadedAd(callback) {-->
+<!--				caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, _$$_((agency, advert)  => {-->
+<!--					$('.r.applovin .invalidate').text(`applovin rewarded has been invalidated`)-->
+<!--					console.log('fullScreenAdInvalidatePreLoadedAd')-->
+<!--				}))-->
+<!--			}-->
+<!--			function applovinRewardedIsReady(callback) {-->
+<!--				caasToApp.fullScreenAdIsReady(AgencySeCode.APPLOVIN, AdvrtsTyCode.REWARDED, _$$_((agency, advert, isReady)  => {-->
+<!--					if (isReady) {-->
+<!--						$('.r.applovin .isready').text(`applovin rewarded is ready`)-->
+<!--						console.log("applovin rewarded is ready");-->
+<!--					} else {-->
+<!--						$('.r.applovin .isready').text(`applovin rewarded is Not ready`)-->
+<!--						console.log("applovin rewarded is not ready");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+
+
+<!--			//applovin native-->
+<!--			function applovinNativeLoad() {-->
+<!--				//test-->
+<!--				//caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, "23a193ec9e4b68d7", {some: "data"});-->
+
+<!--				//world-->
+<!--				//caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, "8f892c317458709e", {some: "data"});-->
+
+<!--				//charity-->
+<!--				caasToApp.loadFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, "3bd4d4b409530c11", {some: "data"});-->
+<!--			}-->
+<!--			function applovinNativeShow() {-->
+<!--				caasToApp.showFullScreenAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, {some: "data"});-->
+<!--			}-->
+<!--			function applovinNativeIsDeveloped() {-->
+<!--				caasToApp.fullScreenAdIsDeveloped(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, _$$_((agency, advert, isDeveloped)  => {-->
+<!--					if (isDeveloped) {-->
+<!--						$('.n.applovin .isdev').text(`applovin native is developed`)-->
+<!--						console.log("applovin native is developed");-->
+<!--					} else {-->
+<!--						$('.n.applovin .isdev').text(`applovin native is Not developed`)-->
+<!--						console.log("applovin native is not developed");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+<!--			function applovinNativeInvalidatePreLoadedAd(callback) {-->
+<!--				caasToApp.fullScreenAdInvalidatePreLoadedAd(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, _$$_((agency, advert)  => {-->
+<!--					$('.n.applovin .invalidate').text(`applovin native has been invalidated`)-->
+<!--					console.log('fullScreenAdInvalidatePreLoadedAd')-->
+<!--				}))-->
+<!--			}-->
+<!--			function applovinNativeIsReady(callback) {-->
+<!--				caasToApp.fullScreenAdIsReady(AgencySeCode.APPLOVIN, AdvrtsTyCode.NATIVE, _$$_((agency, advert, isReady) => {-->
+<!--					if (isReady) {-->
+<!--						$('.n.applovin .isready').text(`applovin native is ready`)-->
+<!--						console.log("applovin native is ready");-->
+<!--					} else {-->
+<!--						$('.n.applovin .isready').text(`applovin native is Not ready`)-->
+<!--						console.log("applovin native is not ready");-->
+<!--					}-->
+<!--				}))-->
+<!--			}-->
+
+
+
+<!--			function fullScreenAdSetCallbackName(callback) {-->
+<!--				$('.i.admob .callback').text(`${callbackName}`)-->
+<!--				caasToApp.fullScreenAdSetCallbackName(callbackName, callback);-->
+<!--			}-->
+<!--			function fullScreenAdGetCallbackName(callback) {-->
+<!--				caasToApp.fullScreenAdGetCallbackName(callback);-->
+<!--			}-->
+
+<!--		</script>-->
+
+<!--    <script>-->
+<!--			caasToApp = {-->
+<!--				...caasToApp,-->
+<!--				//banner-->
+<!--				launchBannerAd(agencySeCode, advrtsTyCode, adKey, jsonObj) {-->
+<!--					Android.launchBannerAd(agencySeCode, advrtsTyCode, adKey, JSON.stringify(jsonObj))-->
+<!--				},-->
+<!--				removeBannerAd(agencySeCode, advrtsTyCode, callback) {-->
+<!--					Android.removeBannerAd(agencySeCode, advrtsTyCode, callback)-->
+<!--				},-->
+<!--				bannerAdIsDeveloped(agencySeCode, advrtsTyCode, callback) {-->
+<!--					Android.bannerAdIsDeveloped(agencySeCode, advrtsTyCode, callback)-->
+<!--				},-->
+<!--				bannerAdSectionOpen(agencySeCode, advrtsTyCode, callback) {-->
+<!--					Android.bannerAdSectionOpen(agencySeCode, advrtsTyCode, callback)-->
+<!--				},-->
+<!--				bannerAdSectionClose(agencySeCode, advrtsTyCode, callback) {-->
+<!--					Android.bannerAdSectionClose(agencySeCode, advrtsTyCode, callback)-->
+<!--				},-->
+<!--				bannerAdSetCallbackName(callbackName, callback) {-->
+<!--					Android.bannerAdSetCallbackName(callbackName, callback)-->
+<!--				},-->
+<!--				bannerAdGetCallbackName(callback) {-->
+<!--					Android.bannerAdGetCallbackName(callback)-->
+<!--				},-->
+
+<!--				//fullscreen-->
+<!--				loadFullScreenAd(agencySeCode, advrtsTyCode, adKey, jsonObj) {-->
+<!--					Android.loadFullScreenAd(agencySeCode, advrtsTyCode, adKey, JSON.stringify(jsonObj))-->
+<!--				},-->
+<!--				showFullScreenAd(agencySeCode, advrtsTyCode, jsonObj) {-->
+<!--					Android.showFullScreenAd(agencySeCode, advrtsTyCode, JSON.stringify(jsonObj))-->
+<!--				},-->
+<!--				fullScreenAdIsDeveloped(agencySeCode, advrtsTyCode, callback) {-->
+<!--					Android.fullScreenAdIsDeveloped(agencySeCode, advrtsTyCode, callback)-->
+<!--				},-->
+<!--				fullScreenAdInvalidatePreLoadedAd(agencySeCode, advrtsTyCode, callback) {-->
+<!--					Android.fullScreenAdInvalidatePreLoadedAd(agencySeCode, advrtsTyCode, callback)-->
+<!--				},-->
+<!--				fullScreenAdIsReady(agencySeCode, advrtsTyCode, callback) {-->
+<!--					Android.fullScreenAdIsReady(agencySeCode, advrtsTyCode, callback)-->
+<!--				},-->
+<!--				fullScreenAdSetCallbackName(callbackName, callback) {-->
+<!--					Android.fullScreenAdSetCallbackName(callbackName, callback)-->
+<!--				},-->
+<!--				fullScreenAdGetCallbackName(callback) {-->
+<!--					Android.fullScreenAdGetCallbackName(callback)-->
+<!--				}-->
+<!--			}-->
+
+<!--			appToCaas = {-->
+<!--				...appToCaas,-->
+<!--				fullScreenAd: {-->
+
+<!--					//AdLoadCallbackDelegate-->
+<!--					onLoadSuccess(agencySeCode, advrtsTyCode, adKey, jsonStr) {-->
+<!--						console.log(`[dl]onLoadSuccess agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`fullScreenAd_onLoadSuccess`, [ [agencySeCode, advrtsTyCode, adKey, jsonStr] ]);-->
+<!--					},-->
+<!--					onLoadFail(agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr) {-->
+<!--						console.log(`[dl]onLoadFail agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, errMsg: ${errMsg}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`fullScreenAd_onLoadFail`, [ [agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr] ]);-->
+<!--					},-->
+
+<!--					//AdEventCallbackDelegate-->
+<!--					onOpen(agencySeCode, advrtsTyCode, adKey, jsonStr) {-->
+<!--						console.log(`[dl]onOpen agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`fullScreenAd_onOpen`, [ [agencySeCode, advrtsTyCode, adKey, jsonStr] ]);-->
+<!--					},-->
+<!--					onClose(agencySeCode, advrtsTyCode, adKey, jsonStr) {-->
+<!--						console.log(`[dl]onClose agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`fullScreenAd_onClose`, [ [agencySeCode, advrtsTyCode, adKey, jsonStr] ]);-->
+<!--					},-->
+<!--					onClick(agencySeCode, advrtsTyCode, adKey, jsonStr) {-->
+<!--						console.log(`[dl]onClick agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`fullScreenAd_onClick`, [ [agencySeCode, advrtsTyCode, adKey, jsonStr] ]);-->
+<!--					},-->
+<!--					onImpression(agencySeCode, advrtsTyCode, adKey, jsonStr) {-->
+<!--						console.log(`[dl]onImpression agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`fullScreenAd_onImpression`, [ [agencySeCode, advrtsTyCode, adKey, jsonStr] ]);-->
+<!--					},-->
+<!--					onRewardComplete(agencySeCode, advrtsTyCode, adKey, amount, jsonStr) {-->
+<!--						console.log(`[dl]onRewardComplete agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, amount: ${amount}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`fullScreenAd_onRewardComplete`, [ [agencySeCode, advrtsTyCode, adKey, amount, jsonStr] ]);-->
+<!--					},-->
+<!--					onException(agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr) {-->
+<!--						console.log(`[dl]onException agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, errMsg: ${errMsg}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`fullScreenAd_onOpen`, [ [agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr] ]);-->
+<!--					},-->
+
+
+<!--				},-->
+<!--				bannerAd: {-->
+
+<!--					//AdLoadCallbackDelegate-->
+<!--					onLoadSuccess(agencySeCode, advrtsTyCode, adKey, jsonStr) {-->
+<!--						console.log(`[dl]onLoadSuccess agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`bannerAd_onLoadSuccess`, [ [agencySeCode, advrtsTyCode, adKey, jsonStr] ]);-->
+<!--					},-->
+<!--					onLoadFail(agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr) {-->
+<!--						console.log(`[dl]onLoadFail agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, errMsg: ${errMsg}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`bannerAd_onLoadFail`, [ [agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr] ]);-->
+<!--					},-->
+
+<!--					//AdEventCallbackDelegate-->
+<!--					onOpen(agencySeCode, advrtsTyCode, adKey, jsonStr) {-->
+<!--						console.log(`[dl]onOpen agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`bannerAd_onOpen`, [ [agencySeCode, advrtsTyCode, adKey, jsonStr] ]);-->
+<!--					},-->
+<!--					onClose(agencySeCode, advrtsTyCode, adKey, jsonStr) {-->
+<!--						console.log(`[dl]onClose agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`bannerAd_onClose`, [ [agencySeCode, advrtsTyCode, adKey, jsonStr] ]);-->
+<!--					},-->
+<!--					onClick(agencySeCode, advrtsTyCode, adKey, jsonStr) {-->
+<!--						console.log(`[dl]onClick agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`bannerAd_onClick`, [ [agencySeCode, advrtsTyCode, adKey, jsonStr] ]);-->
+<!--					},-->
+<!--					onImpression(agencySeCode, advrtsTyCode, adKey, jsonStr) {-->
+<!--						console.log(`[dl]onImpression agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`bannerAd_onImpression`, [ [agencySeCode, advrtsTyCode, adKey, jsonStr] ]);-->
+<!--					},-->
+<!--					onRewardComplete(agencySeCode, advrtsTyCode, adKey, amount, jsonStr) {-->
+<!--						console.log(`[dl]onRewardComplete agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, amount: ${amount}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`bannerAd_onRewardComplete`, [ [agencySeCode, advrtsTyCode, adKey, amount, jsonStr] ]);-->
+<!--					},-->
+<!--					onException(agencySeCode, advrtsTyCode, adKey, errMsg, jsonSt) {-->
+<!--						console.log(`[dl]onException agencySeCode:${agencySeCode}, advrtsTyCode: ${advrtsTyCode}, adKey: ${adKey}, errMsg: ${errMsg}, jsonStr: ${jsonStr}`)-->
+<!--						$(document).trigger(`bannerAd_onException`, [ [agencySeCode, advrtsTyCode, adKey, errMsg, jsonStr] ]);-->
+<!--					}-->
+<!--				}-->
+<!--			}-->
+<!--		</script>-->
+<!--</th:block>-->
+<!--</body>-->
+
+<!--</html>-->
+
+<!--&lt;!&ndash;_appCallback : function(callback, key) {&ndash;&gt;-->
+<!--&lt;!&ndash;const defFuncNm = "__$_$_$_$_";&ndash;&gt;-->
+<!--&lt;!&ndash;if(callback && callback instanceof Function) {&ndash;&gt;-->
+<!--&lt;!&ndash;if(key){&ndash;&gt;-->
+<!--&lt;!&ndash;var funcNm = defFuncNm + key; //(*1)&ndash;&gt;-->
+<!--&lt;!&ndash;window[funcNm] = callback;&ndash;&gt;-->
+<!--&lt;!&ndash;return funcNm; //(*2)&ndash;&gt;-->
+<!--&lt;!&ndash;} else {&ndash;&gt;-->
+<!--&lt;!&ndash;var funcNm = defFuncNm + bfcCom.getUuid().replaceAll('-', ''); //(*b1)&ndash;&gt;-->
+<!--&lt;!&ndash;window[funcNm] = function(...data){&ndash;&gt;-->
+<!--&lt;!&ndash;delete window[funcNm]; //(*b2)&ndash;&gt;-->
+<!--&lt;!&ndash;callback(...data); //(*b3)&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+<!--&lt;!&ndash;return funcNm;&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+<!--&lt;!&ndash;} else {&ndash;&gt;-->
+<!--&lt;!&ndash;var funcNm = callback ? defFuncNm + callback : defFuncNm; //(*1)&ndash;&gt;-->
+<!--&lt;!&ndash;return window[funcNm](); //(*3)&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+<!--&lt;!&ndash;},&ndash;&gt;-->
+<!--&lt;!&ndash;setCallback : (callback, adding) => { bfcFunc._appCallback(callback, adding); },&ndash;&gt;-->
+<!--&lt;!&ndash;callCallback : (adding) => { bfcFunc._appCallback(adding); },&ndash;&gt;-->

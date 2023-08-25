@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/native_ad_overlay"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#FFC2E0">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_banner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/dismiss_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/button_banner"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/btn_close_shape"
+            tools:ignore="ContentDescription" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ViewFlipper
+        android:id="@+id/view_animator"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_banner">
+
+        <include layout="@layout/tnk_layout" />
+
+        <include layout="@layout/admob_layout" />
+
+        <include layout="@layout/applovin_layout" />
+    </ViewFlipper>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
